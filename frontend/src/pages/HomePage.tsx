@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="py-16 bg-primary text-white"
+                className="py-8 md:py-16 bg-primary text-white"
             >
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">What Artists Are Saying</h2>

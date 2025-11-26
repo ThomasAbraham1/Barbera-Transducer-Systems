@@ -25,8 +25,8 @@ const ProductDetailPage: React.FC = () => {
                 <Link to="/products" className="text-accent hover:underline mb-8 inline-block">&larr; Back to Products</Link>
 
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-                    <div className="md:w-1/2 bg-white min-h-[500px] p-8 flex items-center justify-center">
-                        <img src={product.imageUrl} alt={product.name} className="w-full h-full max-h-[600px] object-contain" />
+                    <div className="md:w-1/2 bg-white min-h-[300px] md:min-h-[400px] p-4 md:p-8 flex items-center justify-center">
+                        <img src={product.imageUrl} alt={product.name} className="w-full h-full max-h-[400px] md:max-h-[500px] object-contain" />
                     </div>
 
                     <div className="md:w-1/2 p-8 md:p-12">
