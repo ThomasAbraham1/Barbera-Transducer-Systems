@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
                 className="py-8 md:py-16 bg-primary text-white"
             >
                 <div className="container mx-auto px-4 text-center max-w-4xl">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">What Artists Are Saying</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12 text-white">What Artists Are Saying</h2>
                     <blockquote className="text-xl md:text-2xl italic mb-8 font-light leading-relaxed">
                         "The Barbera Transducer Bridge is by far the best and most consistent sounding pick-up I have ever experienced in over twenty years."
                     </blockquote>
