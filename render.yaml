@@ -2,6 +2,7 @@ services:
   - type: static
     name: barbera-frontend
     env: static
+    rootDirectory: frontend
     buildCommand: npm run build
     publishDir: dist
     routes:
