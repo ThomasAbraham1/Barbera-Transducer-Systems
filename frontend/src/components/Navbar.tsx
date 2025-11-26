@@ -9,8 +9,14 @@ const Navbar: React.FC = () => {
     return (
         <nav className="bg-primary text-white shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link to="/" className="text-xl md:text-2xl font-serif font-bold tracking-wider truncate">
-                    Barbera Transducer Systems
+                <Link to="/" className="flex items-center gap-3">
+                    <div className="bg-accent text-primary font-bold text-2xl md:text-3xl px-4 py-2 rounded shadow-lg">
+                        BTS
+                    </div>
+                    <div className="hidden sm:block">
+                        <div className="text-base md:text-lg font-bold leading-tight">Barbera Transducer</div>
+                        <div className="text-sm md:text-base font-bold leading-tight opacity-90">Systems</div>
+                    </div>
                 </Link>
 
                 <div className="hidden lg:flex space-x-6 font-sans text-sm font-medium items-center">
