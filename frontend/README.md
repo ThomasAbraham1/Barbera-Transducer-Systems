@@ -1,5 +1,10 @@
 # React + TypeScript + Vite
 
+This is the frontend for the Barbera Transducers project, built with React, TypeScript, and Vite.
+
+> [!TIP]
+> **New to this project?** Check out our [Beginner's Guide](docs/BEGINNER_GUIDE.md) for a step-by-step introduction to the codebase and tech stack.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
