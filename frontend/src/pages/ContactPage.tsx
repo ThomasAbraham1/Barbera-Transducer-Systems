@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import PageTransition from '../components/PageTransition';
 
 const ContactPage: React.FC = () => {
@@ -30,6 +31,13 @@ const ContactPage: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
+        ReactGA.event({
+            category: 'Contact',
+            action: 'Form Submitted',
+            label: formData.subject
+        });
+
         console.log('Form submitted:', formData);
         alert('Thank you for your message! We will get back to you soon.');
         setFormData({ name: '', email: '', subject: '', message: '' });

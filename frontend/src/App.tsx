@@ -14,11 +14,14 @@ import LinksPage from './pages/LinksPage';
 import ResourcesPage from './pages/ResourcesPage';
 import ScrollToTop from './components/ScrollToTop';
 
+import AnalyticsTracker from './components/AnalyticsTracker';
+
 const App: React.FC = () => {
   const location = useLocation();
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-text-main">
+      <AnalyticsTracker />
       <ScrollToTop />
       <Navbar />
       <main className="flex-grow">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
 import { products } from '../data/products';
 
@@ -12,6 +13,12 @@ const ProductDetailPage: React.FC = () => {
         const foundProduct = products.find(p => p.id === id);
         if (foundProduct) {
             setProduct(foundProduct);
+            ReactGA.event({
+                category: 'Product',
+                action: 'View Item',
+                label: foundProduct.name,
+                value: parseInt(foundProduct.price.replace(/[^0-9]/g, '')) || 0
+            });
         }
         setLoading(false);
     }, [id]);
@@ -51,6 +58,11 @@ const ProductDetailPage: React.FC = () => {
                             <Link
                                 to={`/contact?product=${encodeURIComponent(product.name)}`}
                                 className="inline-block px-8 py-3 bg-primary text-white font-bold rounded hover:bg-primary/90 transition-colors text-center shadow-md hover:shadow-lg"
+                                onClick={() => ReactGA.event({
+                                    category: 'Product',
+                                    action: 'Contact to Order',
+                                    label: product.name
+                                })}
                             >
                                 Contact to Order
                             </Link>

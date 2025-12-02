@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +73,13 @@ const Navbar: React.FC = () => {
                     </div>
 
                     <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                    <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+                    <Link
+                        to="/contact"
+                        className="hover:text-accent transition-colors"
+                        onClick={() => ReactGA.event({ category: 'Navigation', action: 'Click Contact', label: 'Navbar' })}
+                    >
+                        Contact
+                    </Link>
                 </div>
 
                 <button
