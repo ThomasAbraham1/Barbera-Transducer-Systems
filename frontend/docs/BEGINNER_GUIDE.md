@@ -138,6 +138,29 @@ Example:
 </div>
 ```
 
+
+### Managing "Hear the Difference" Audio
+
+The audio comparison section is located in `src/components/HearTheDifference.tsx`. 
+
+It uses standard HTML5 `<audio>` elements for playback to ensure mobile compatibility and exclusive playback (one stops the other).
+
+**Key Implementation Details:**
+1.  **Source File**: `src/components/HearTheDifference.tsx`
+2.  **Audio Source**: The MP3 URL is defined in the `MP3_URL` constant.
+    ```tsx
+    const MP3_URL = "https://your-audio-url.com/file.mp3";
+    ```
+    To change the audio, simply replace this string.
+3.  **Exclusive Playback**: The component manages an `activeId` state. When one card is toggled, it automatically pauses any other active audio refs before playing the new one.
+4.  **AudioCard Component**: The UI is handled by the `AudioCard` component, which takes `label`, `description`, `color`, and `isActive` props. It does *not* contain the `<audio>` tag itself; that is controlled by the parent component to ensure coordination.
+
+**To Add a New Audio Track:**
+1.  Add a new `useRef<HTMLAudioElement>(null)` for the new track.
+2.  Add a new `<AudioCard />` in the grid.
+3.  Add a corresponding `<audio />` element at the bottom of the component, attached to the new ref.
+4.  Update `handleToggle` to manage the new ID.
+
 ## 📚 Learn More
 
 -   [React Documentation](https://react.dev/learn)

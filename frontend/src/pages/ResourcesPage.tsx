@@ -25,8 +25,8 @@ const ResourcesPage: React.FC = () => {
                         <button
                             onClick={() => setActiveTab('building')}
                             className={`px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'building'
-                                    ? 'bg-primary text-white shadow-lg'
-                                    : 'bg-white text-primary hover:bg-gray-100'
+                                ? 'bg-primary text-white shadow-lg'
+                                : 'bg-white text-primary hover:bg-gray-100'
                                 }`}
                         >
                             Building Your Own
@@ -34,8 +34,8 @@ const ResourcesPage: React.FC = () => {
                         <button
                             onClick={() => setActiveTab('concepts')}
                             className={`px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'concepts'
-                                    ? 'bg-primary text-white shadow-lg'
-                                    : 'bg-white text-primary hover:bg-gray-100'
+                                ? 'bg-primary text-white shadow-lg'
+                                : 'bg-white text-primary hover:bg-gray-100'
                                 }`}
                         >
                             Concepts Behind BTS
@@ -43,8 +43,8 @@ const ResourcesPage: React.FC = () => {
                         <button
                             onClick={() => setActiveTab('faq')}
                             className={`px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'faq'
-                                    ? 'bg-primary text-white shadow-lg'
-                                    : 'bg-white text-primary hover:bg-gray-100'
+                                ? 'bg-primary text-white shadow-lg'
+                                : 'bg-white text-primary hover:bg-gray-100'
                                 }`}
                         >
                             FAQ

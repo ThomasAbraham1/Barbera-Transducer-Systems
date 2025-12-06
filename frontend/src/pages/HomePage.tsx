@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom';
+import HearTheDifference from '../components/HearTheDifference';
+import GlobalAudienceMap from '../components/GlobalAudienceMap';
 
 import { products } from '../data/products';
 
@@ -31,6 +33,9 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
             </motion.section>
+
+            <HearTheDifference />
+            <GlobalAudienceMap />
 
             {/* Testimonials Preview */}
             <motion.section
