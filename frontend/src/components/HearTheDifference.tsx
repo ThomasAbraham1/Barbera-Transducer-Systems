@@ -14,8 +14,8 @@ const AudioCard: React.FC<{
     return (
         <motion.div
             className={`relative p-8 rounded-3xl border transition-all duration-300 overflow-hidden cursor-pointer group ${isActive
-                    ? `bg-white/10 border-${color} shadow-[0_0_30px_rgba(var(--color-${color}),0.1)]`
-                    : 'bg-white/5 border-white/10 hover:bg-white/10'
+                ? `bg-white/10 border-${color} shadow-[0_0_30px_rgba(var(--color-${color}),0.1)]`
+                : 'bg-white/5 border-white/10 hover:bg-white/10'
                 }`}
             onClick={onToggle}
             whileHover={{ scale: 1.01 }}
@@ -60,7 +60,9 @@ const HearTheDifference: React.FC = () => {
     const audioStandardRef = useRef<HTMLAudioElement>(null);
     const audioBarberaRef = useRef<HTMLAudioElement>(null);
 
-    const MP3_URL = "https://s3.ustatik.com/audio.com.audio/source/44/40/1850762177414044-1850762177532250.mp3?response-content-disposition=attachment%3B%20filename%3D%22Tracy%20Silverman%20-%20John%20Adams%20Dharma%20%28with%20BBC%20Philharmonic%29.mp3%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20251206%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20251206T123249Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=d02c292e5fc3abc132862adb0c80eeae07bf40e14ebd704957f657291de6df3f";
+    // Local Audio Assets
+    const STANDARD_AUDIO_URL = "/audio/standard.mp3";
+    const BARBERA_AUDIO_URL = "/audio/barbera.mp3";
 
     const handleToggle = (id: 'standard' | 'barbera') => {
         const standardAudio = audioStandardRef.current;
@@ -141,14 +143,14 @@ const HearTheDifference: React.FC = () => {
                 {/* Hidden Audio Elements - Controlled Programmatically */}
                 <audio
                     ref={audioStandardRef}
-                    src={MP3_URL}
+                    src={STANDARD_AUDIO_URL}
                     onEnded={() => setIsPlaying(false)}
                     onPause={() => { if (activeId === 'standard') setIsPlaying(false); }}
                     onPlay={() => { if (activeId === 'standard') setIsPlaying(true); }}
                 />
                 <audio
                     ref={audioBarberaRef}
-                    src={MP3_URL}
+                    src={BARBERA_AUDIO_URL}
                     onEnded={() => setIsPlaying(false)}
                     onPause={() => { if (activeId === 'barbera') setIsPlaying(false); }}
                     onPlay={() => { if (activeId === 'barbera') setIsPlaying(true); }}
